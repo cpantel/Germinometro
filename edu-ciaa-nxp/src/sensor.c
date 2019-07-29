@@ -118,8 +118,6 @@ int main( void )
          lcdSendStringRaw( humString );
          lcdSendStringRaw( "%" );
 
-         delay(3000);
-         lcdClear(); // Borrar la pantalla
 
       } else {
          // Si leyo mal apago el LEDG y enciendo el LEDR
@@ -128,7 +126,8 @@ int main( void )
          // Informo el error de lectura
          printf( "Error al leer DHT11.\r\n\r\n");
       }
-      delay(1000); // Espero 1 segundo.
+      delay(60000); // Espero 1 minuto.
+      lcdClear(); // Borrar la pantalla
    }
    // NO DEBE LLEGAR NUNCA AQUI, debido a que a este programa se ejecuta
    // directamente sobre un microcontrolador y no es llamado por ningun
